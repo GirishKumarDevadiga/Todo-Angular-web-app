@@ -1,0 +1,49 @@
+<div class="container">
+  <form>
+  <div class="formgroup">
+     <input #task type="text" class="form-control" placeholder="Enter your todo task">
+     <div class="input-group">
+      <input #Date  class="form-control" placeholder="yyyy-mm-dd"
+             name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" >
+      <div  class="input-group-append">
+        <button class="btn btn-outline-secondary calendar" class="form-control"
+        (click)="d.toggle()" type="button"> <span class="material-icons">
+          calendar_today
+          </span>
+       </button>
+      </div>
+    </div>
+     <br>
+     <button type="button" class="btn btn-primary"
+     (click)="addToTask(task.value, Date.value)">Add to list</button> &nbsp;
+     <button type="button" class="btn btn-info" (click)="onShowTask()">Show Tasks</button>
+
+  </div>
+
+  </form>
+  <br>
+  <hr>
+<div class="list-group" *ngIf="isShowTask">
+  <!-- <li class="list-group-item list-group-item-info d-flex justify-content-between align-items-center"
+  *ngFor="let task of tasklists"> -->
+  <button  (click)="onClickDelete(task)" class="list-group-item " *ngFor="let task of tasklists"    style="width: 21rem;" >
+  <div class="card text-white bg-dark mb-3 " style="width: 18rem;"  >
+    <div class="card-body">
+      <h5 class="card-title">Task Schedule</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Date: {{task.date}} </h6>
+      <p class="card-text">Task: {{task.taskname}}</p>
+      <a href="#" class="card-link"></a>
+      <a href="#" class="card-link"></a>
+    </div>
+  </div>
+  </button>
+
+   <!-- <button   class="list-group-item list-group-item-info d-flex justify-content-between align-items-center"
+  (click)="onClickDelete(task)">
+  <span class="material-icons">
+    delete
+    </span>
+  </button> -->
+ <!-- </li> -->
+</div>
+</div>

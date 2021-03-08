@@ -1,0 +1,19 @@
+
+.delete {
+  text-align: right;
+  color: red;
+}
+
+
+.material-icons {
+   position: relative;
+  }
+
+
+  .task {
+    float: left;
+    align-self: flex-start;
+
+  }
+
+

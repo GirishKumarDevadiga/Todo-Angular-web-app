@@ -1,0 +1,15 @@
+h3 {
+  text-align: center;
+  color: red;
+}
+
+body {
+      background-color:rgb(44, 92, 163);
+
+      background-image: url('/assets/images/bg-img.jpg');
+      text-align: center;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+}
+
